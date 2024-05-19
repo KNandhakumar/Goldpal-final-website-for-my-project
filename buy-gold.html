@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Now</title>
+    <link rel="icon" href="assets/images/final gold pal purshoth new logo psd.png">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #5a0272;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .amount-grams {
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #09c62b;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #09c62b;
+            cursor: not-allowed;
+        }
+        .file-input {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buy Gold</h1>
+    <label for="investmentAmount">Enter Investment Amount :</label>
+    <input type="number" id="investmentAmount" min="2500" max="300000">
+    <p>Amount in Grams: <span class="amount-grams">0</span></p>
+
+    <label for="accountName">Account Name:</label>
+    <input type="text" id="accountName">
+
+    <label for="accountNo">Account No:</label>
+    <input type="text" id="accountNo">
+
+    <label for="ifscCode">IFSC Code:</label>
+    <input type="text" id="ifscCode">
+
+    <label>Choose Payment Proof Screenshot:</label>
+    <input type="file" id="paymentProofScreenshot">
+
+    <button onclick="completePurchase()">Buy Now</button>
+</div>
+
+<script>
+    const investmentAmountInput = document.getElementById('investmentAmount');
+    const amountInGrams = document.querySelector('.amount-grams');
+
+    investmentAmountInput.addEventListener('input', () => {
+        const investmentAmount = investmentAmountInput.value;
+        const goldPricePerGram = 5660;
+        const grams = (investmentAmount / goldPricePerGram).toFixed(2);
+        amountInGrams.textContent = `${grams} grams`;
+    });
+
+    function completePurchase() {
+        // Here, you would typically send the payment details to a server for processing.
+        // For this basic example, we'll just show a success message.
+        alert('Purchase successful! Thank you for buying gold.');
+    }
+</script>
+</body>
+</html>

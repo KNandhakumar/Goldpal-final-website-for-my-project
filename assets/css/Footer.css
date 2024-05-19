@@ -1,0 +1,225 @@
+:root{
+    --dark:rgb(149, 6, 154) 0%;
+    --orange:#d8a416;
+    --white:#fff;
+    --light:rgba(255,255,255,0.5);
+}
+#hello{
+    height: 70vh;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Saira", sans-serif;
+    overflow:hidden;
+}
+footer{
+    background-color: var(--dark);
+    height: 470px;
+    width: 100%;
+    position: absolute;
+    top: 100;
+}
+.container{
+    width: 1380px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.col-3{width: 25%; float: left;}
+.col-6{width: 50%; float: left;}
+.clearfix{clear: both;}
+.container-fluid{
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256,256,256,.1);
+}
+.logo{color: var(--orange);}
+.logo span{color: var(--white);}
+.btn-square{
+    width: 38px;
+    height: 38px;
+}
+.social{margin-top:20px; }
+p{
+    color: var(--light);
+    font-family: system-ui!important;
+    width: 300px;
+}
+p a{color: var(--white); text-decoration: none;}
+.social-btn i{
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    border: 1px solid var(--light);
+    line-height: 40px;
+    color: var(--light);
+    border-radius: 5px;
+}
+.social-btn i:hover{
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.playstore{
+    margin-top: 20px;
+}
+
+.playstore img{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    margin-left: 0%;
+}
+
+.playstore img:hover{
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+h5{
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+}
+.me-3{margin-right: 1rem!important;}
+footer .btn.btn-link{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    font-family: system-ui!important;
+    line-height: 28px;
+    color: var(--light);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+
+}
+footer .btn.btn-link::before{
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: rgba(255, 255,255, 0.5);
+    margin-right: 10px;
+}
+footer .btn.btn-link:hover{
+    color: var(--white);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+.input{
+    width: 280px;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    position: relative;
+    outline: none;
+}
+.input:focus{
+    color: #787878;
+    background-color: white;
+    border-color: #ffb787;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255,111,15,0.25);
+}
+.signbtn{
+    /* position:absolute ; */
+    right: 95px;
+    top: 7px;
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 5px;
+    border: 1px solid var(--orange);
+    font-size: 16px;
+    transition: .5s;
+}
+.signbtn:active:focus{box-shadow: 0 0 0 0.25rem rgba(217,94,13,0.5);}
+.signbtn:hover{
+    color: var(--orange);
+    background: transparent;
+}
+.design{text-align: right;}
+.footb{float: right;}
+
+/* Default styles for larger screens */
+/* #hello {
+    padding: 50px 0; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .col-3 {
+    width: 25%;
+  }
+   */
+  /* Responsive styles for tablet */
+  @media (max-width: 900px) {
+    #hello {
+      padding: 30px 0; /* Adjust as needed */
+    }
+
+    .signbtn{
+        display: none;
+    }
+  
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .col-3 {
+      width: 20%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .input {
+        display: none;
+    }
+  }
+  
+  /* Responsive styles for mobile */
+  @media (max-width: 576px) {
+  
+    #footer .container{
+        width: 1380px;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+    }
+    .col-3 {
+      width: 70%;
+      margin-bottom: 50px;
+      text-align: center;
+      display: flexbox;
+      margin-left: 15%;
+    }
+  
+    .social {
+      text-align: center;
+    }
+  
+    #footer .playstore {
+      text-align: center;
+      margin-left: 8%;
+    }
+  
+    .col-3,
+    .col-3 h5,
+    .col-3 p {
+      text-align: center;
+    }
+  
+    .input {
+      width: 10%;
+    }
+  }
+  

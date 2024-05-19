@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="/assets/css/Dashboard.css">
+	<link rel="icon" href="/assets/images/goldpal-logo.png">
+	<!-- Boxicons CDN Link -->
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		.close-button {
+			width: 20px;
+			height: 30px;
+			cursor: pointer;
+			position: fixed;
+			top: 20px;
+			right: 20px;
+		}
+
+		.line {
+			width: 100%;
+			height: 3px;
+			background-color: #333;
+			position: absolute;
+			top: 50%;
+			transform-origin: center;
+			transition: transform 0.3s, background-color 0.3s;
+		}
+
+		.line1 {
+			transform: translateY(-50%) rotate(45deg);
+		}
+
+		.line2 {
+			transform: translateY(-50%) rotate(-45deg);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="logo-details">
+			<!--<i class='bx bxl-c-plus-plus'></i>-->
+			<div><img src="/assets/images/goldpal-logo.png" alt=""></div>
+			<span class="logo_name">Goldpal</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<a href="/Dashboard.html" class="active">
+					<i class='bx bx-grid-alt'></i>
+					<span class="links_name">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/withdrawgold.html">
+					<i class='fa fa-shopping-bag icons'></i>
+					<span class="links_name">Withdraw Gold</span>
+				</a>
+			</li>
+			<li>
+				<a href="/withdrawcash.html">
+					<i class='fa fa-rupee icons'></i>
+					<span class="links_name">Withdraw Cash</span>
+				</a>
+			</li>
+			<li>
+				<a href="/investhistory.html">
+					<i class='fa fa-line-chart'></i>
+					<span class="links_name">Investment History</span>
+				</a>
+			</li>
+			<li>
+				<a href="/userprofile.html">
+					<i class='fa fa-user-circle-o'></i>
+					<span class="links_name">Profile</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/privacy.html">
+					<i class='fa fa-list-alt icons'></i>
+					<span class="links_name">Privacy</span>
+				</a>
+			</li>
+			<li>
+				<a href="/referal.html">
+					<i class='bx bx-link-alt'></i>
+					<span class="links_name">Referal</span>
+				</a>
+			</li>
+			<li>
+				<a href="/messages.html">
+					<i class='bx bx-message'></i>
+					<span class="links_name">Messages</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="logoutButton1">
+					<i class='bx bx-globe'></i>
+					<span class="links_name">Website</span>
+				</a>
+			</li>
+			<li>
+				<a href="/setting.html">
+					<i class='bx bx-cog'></i>
+					<span class="links_name">Setting</span>
+				</a>
+			</li>
+			<li class="log_out">
+				<a href="#" id="logoutButton">
+					<i class='bx bx-log-out'></i>
+					<span class="links_name">Log out</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<section class="home-section">
+		<nav>
+			<div class="sidebar-button">
+				<i class='bx bx-menu sidebarBtn'></i>
+				<span class="dashboard" style="color: white;">Dashboard</span>
+			</div>
+			<div class="search-box">
+				<input type="text" placeholder="Search...">
+				<i class='bx bx-search'></i>
+			</div>
+			<div class="profile-details">
+				<img src="assets/images/icons8-user-100.png" alt="">
+				<span id="userIdDisplay" style="color: rgb(0, 0, 0);"> </span>
+				<!--<i class='bx bx-chevron-down'></i>-->
+			</div>
+		</nav>
+
+		<div class="home-content">
+			<div class="overview-boxes">
+				<div class="box">
+					<div class="right-side">
+						<div class="box-topic">Reserved Gold</div>
+						<div class="number" id="goldgrams-display"></div>
+						<!--<div class="indicator">
+							<i class='bx bx-up-arrow-alt'></i>
+							<span class="text">Up from yesterday</span>
+						</div>-->
+					</div>
+					<i class='bx bx-cart cart three' style="margin-left: 50px;"></i>
+
+				</div>
+				<div class="box">
+					<div class="right-side">
+						<div class="box-topic">Investment</div>
+						<i class="fa fa-rupee box-icon"></i>
+						<div class="number" id="investment-amount-value"></div>
+						<!--<div class="indicator">
+							<i class='bx bx-up-arrow-alt'></i>
+							<span class="text">Up from yesterday</span>
+						</div>-->
+					</div>
+					<i class='bx bxs-cart-add cart two' style="margin-left: 50px;"></i>
+				</div>
+				<div class="box">
+					<div class="right-side">
+						<div class="box-topic">Wallet</div>
+						<i class="fa fa-rupee box-icon"></i>
+						<div class="number" id="wallet-balance"></div>
+						<!--<div class="indicator">
+							<i class='bx bx-up-arrow-alt'></i>
+							<span class="text">Up from yesterday</span>
+						</div>-->
+					</div>
+					<i class='bx bx-cart-alt cart' style="margin-left: 50px;"></i>
+				</div>
+				<div class="box">
+					<div class="right-side">
+						<div class="box-topic">Live Gold Rate</div>
+						<div class="number" id="metal-prices">Loading...</div>
+						<!--<div class="indicator">
+							<i class='bx bx-down-arrow-alt down'></i>
+							<span class="text">Down From Today</span>
+						</div>-->
+					</div>
+
+					<i class='bx bx-station bx-burst' style="color: red; font-size: 24px; margin-left: 50px;"></i>
+
+
+				</div>
+			</div>
+			<div
+				style="display: flex; justify-content: space-between; align-items: center; background-color: rgb(255, 255, 255); border-radius: unset; padding: 10px;">
+				<span style="font-size: 30px; cursor: pointer; color: rgb(0, 0, 0); margin: auto;" class="nav">
+					<span id="welcome-message">Welcome! Glad to meet you again </span>
+					<span id="dashboard-username">Loading...</span>
+				</span>
+				<div>
+					<button class="Btn" onclick="toggleBuyForm()"></button>
+				</div>
+			</div>
+			</br>
+
+
+			<div class="container">
+				<div class="buy-form active">
+					<div class="close-button" onclick="closeForm()">
+						<div class="line line1"></div>
+						<div class="line line2"></div>
+					</div>
+					<h1>Buy Gold</h1>
+					<form id="buyForm" action="/api/transactions/buy" method="post" enctype="multipart/form-data">
+						<label for="investmentAmount">Enter Investment Amount:</label>
+						<input type="tel" name="investmentAmount" id="investmentAmount" required>
+
+						<label for="readonlyInput">Transaction Type:</label>
+						<input type="text" name="transactionType" id="readonlyInput" value="Account Transfer" readonly>
+
+						<p>Amount in Grams: <span class="amount-grams" id="goldgrams">0</span></p>
+
+
+						<div class="continuebutton" onclick="toggleForms()">
+							Account detials
+							<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+								<path fill-rule="evenodd"
+									d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</div>
+
+						<label class="file-input">Choose Payment Proof Screenshot:</label>
+						<input type="file" name="screenshot" id="paymentProofScreenshot" required>
+
+						<button class="submitbutton" type="submit">Submit</button>
+					</form>
+				</div>
+
+				<div class="account-details" style="margin-top: 2%;">
+					<div class="close-button" onclick="closeForm()">
+						<div class="line line1"></div>
+						<div class="line line2"></div>
+					</div>
+
+					<h1>Account Details</h1>
+					<p style="text-align: left;"><strong>Account Holder:</strong> Olive wealth management Enterprises
+					</p>
+					<p style="text-align: left;"><strong>Account Number:</strong> 408825699511</p>
+					<p style="text-align: left;"><strong>Ifsc code:</strong> RATN0000480</p>
+
+					<p>(OR)</p>
+
+					<p style="text-align: left;">Scan the QR code to pay</p>
+
+					<img style="text-align: left;" id="qr-code"
+						src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Account123456789"
+						alt="QR Code">
+
+
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+
+
+	</section>
+
+
+	<script src="assets/js/dashboard.js"></script>
+
+
+	<script>
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".sidebarBtn");
+		sidebarBtn.onclick = function () {
+			sidebar.classList.toggle("active");
+			if (sidebar.classList.contains("active")) {
+				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+			} else
+				sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+		}
+	</script>
+
+	<script>
+		const investmentAmountInput = document.getElementById('investmentAmount');
+		const amountInGrams = document.querySelector('.amount-grams');
+
+		// Retrieve gold rate from local storage
+		const goldRateString = localStorage.getItem('goldRate');
+
+		// Extract numeric value from the rate string
+		const goldRate = parseFloat(goldRateString.replace(/[^\d.]/g, ''));
+
+		investmentAmountInput.addEventListener('input', () => {
+			const investmentAmount = investmentAmountInput.value;
+
+			// Check if gold rate is available and it's a valid number
+			if (!isNaN(goldRate)) {
+				const grams = (investmentAmount / goldRate).toFixed(2);
+				amountInGrams.textContent = `${grams} g`;
+			} else {
+				// Handle the case where gold rate is not available or not a valid number
+				amountInGrams.textContent = 'Gold rate not available or invalid';
+			}
+		});
+
+		 
+	</script>
+
+	<script>
+		function toggleBuyForm() {
+			var buyForm = document.querySelector('.buy-form');
+			buyForm.style.display = (buyForm.style.display === 'none' || buyForm.style.display === '') ? 'block' : 'none';
+		}
+
+        // ... (your other scripts) ...
+	</script>
+	<script>
+		function toggleForms() {
+			const accountDetails = document.querySelector('.account-details');
+			const buyForm = document.querySelector('.buy-form');
+
+			accountDetails.classList.toggle('active');
+			buyForm.classList.toggle('active');
+		}
+		function closeForm() {
+			window.location.href = '/Dashboard.html';
+		}
+	</script>
+
+
+</body>
+
+</html>

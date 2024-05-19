@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/assets/images/goldpal-logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="/assets/css/userlist.css">
+	<title>UsersList</title>
+	 
+
+</head>
+
+<body>
+
+	<div class="section-header">
+		<span>Users List Here</span>
+	</div>
+	 
+	<div class="search-box">
+		<input type="text" placeholder="Search..." id="searchInput">
+		<i class='bx bx-search' id="searchIcon"></i>
+	</div>
+
+	<div class="table-card">
+		<table>
+			<thead>
+				<tr>
+					<th>UserID</th>
+					<th>Name</th>
+					<!--<th>Email</th>-->
+					<!--<th>Mobile</th>-->
+					<th>RegisterDate</th>
+					<!--<th>LoginDateTime</th>-->
+					<th>InvestedAmount</th>
+					<th>ReservedGold</th>
+					<th>Wallet</th>
+					<th>
+						<div class="filter-container">
+							<span>Account Status</span>
+							<select id="accountStatusColumnFilter" onchange="filterByAccountStatusColumn(this.value)">
+								<option value="">All</option>
+								<option value="Active">Active</option>
+								<option value="Inactive">Inactive</option>
+							</select>
+						</div>
+					</th>
+					<th>Actions </th>
+					<th>Delete</th>
+
+				</tr>
+			</thead>
+
+			<tbody id="tableBody">
+				<!-- Add more rows as needed -->
+			</tbody>
+
+		</table>
+		<div id="noResultsMessage" style="display: none;">No details found</div>
+	</div>
+
+	<script src="/assets/js/userlist.js"></script>
+
+</body>
+
+</html>

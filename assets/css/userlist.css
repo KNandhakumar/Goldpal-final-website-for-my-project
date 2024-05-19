@@ -1,0 +1,105 @@
+body{
+	
+	 background-color:linear-gradient(to bottom, rgb(0, 0, 0), rgb(128, 0, 128));
+} 
+ 
+ .section-header {
+ 	text-align: center;
+ 	background-color: rgb(255, 255, 255);
+ 	color: rgb(0, 0, 0);
+ 	padding: 10px;
+ 	border-radius: 10px 10px 0 0;
+ 	margin-top: 20px;
+ 	border: 1px solid rgb(0, 0, 0);
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ }
+
+ .section-header span {
+ 	font-size: 1.5rem;
+ }
+
+ .table-card {
+ 	border: 1px solid #e6e6e6;
+ 	border-radius: 10px;
+ 	overflow: hidden;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 	margin-top: 20px;
+ }
+
+ table {
+ 	width: 100%;
+ 	border-collapse: collapse;
+ 	table-layout: fixed;
+ 	background:   rgb(255, 255, 255);
+ 	 
+ 	 
+ }
+
+ th,
+ td {
+ 	padding: 20px;
+ 	text-align: left;
+ 	border-bottom: 1px solid #e6e6e6;
+ 	white-space: nowrap;
+ 	/* Prevent text from wrapping */
+ 	overflow: hidden;
+ 	/* Hide overflowing content */
+ 	text-overflow: ellipsis;
+ 	/* Show an ellipsis (...) for truncated text */
+ }
+
+ th {
+ 	font-weight: bold;
+ 	color: rgb(255, 255, 255);
+ 	background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(128, 0, 128));
+ 	 position: sticky;
+ 	 top: 0;
+    z-index: 1;
+ }
+ .table-card tbody {
+    height: 200px; /* Set a height for the tbody to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+ tbody tr:hover {
+ 	background-color: rgb(255, 255, 255);
+ 	color: rgb(0, 0, 0);
+  
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ }
+ .search-box {
+	position: relative;
+	height: 50px;
+	max-width: 550px;
+	width: 100%;
+	margin: 0 20px;
+	margin-top: 2%;
+	margin-left: 62%;
+}
+
+.search-box input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	background: #F5F6FA;
+	border: 2px solid #EFEEF1;
+	border-radius: 6px;
+	font-size: 18px;
+	padding: 0 15px;
+}
+
+.search-box .bx-search {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background: #2697FF;
+	right: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 4px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 22px;
+	transition: all 0.4 ease;
+}
